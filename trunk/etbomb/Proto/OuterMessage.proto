@@ -1,0 +1,217 @@
+syntax = "proto3";
+package ET;
+
+message C2R_Ping // IRequest
+{
+	int32 RpcId = 90;
+}
+
+message R2C_Ping // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}
+
+message C2R_Login // IRequest
+{
+	int32 RpcId = 90;
+	string	Account	 = 1;	// 帐号
+	string	Password = 2;	// 密码
+}
+
+message R2C_Login // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+	string Address = 1;
+	int64 Key	    = 2;
+	int64 GateId = 3;
+}
+
+message C2G_LoginGate // IRequest
+{
+	int32 RpcId = 90;
+	int64 Key = 1;	// 帐号
+	int64 GateId = 2;
+}
+
+message G2C_LoginGate // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+
+	int64 UId = 1;
+    string NickName = 2;
+    int32 Coin = 3;
+    int32 RoomCard = 4;
+}
+
+message PlayerInfo 
+{
+    int64 UId = 1;
+    string NickName = 2;
+    int32 Coin = 3;
+    int32 RoomCard = 4;
+}
+
+message PlayerInfoRefresh // IActorMessage
+{
+    int64 ActorId = 94;
+	PlayerInfo Info = 1;
+}
+
+message C2G_CreateRoomRequest // IRequest
+{
+	int32 RpcId = 90;
+}
+
+message G2C_CreateRoomResponse // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+
+	int64 RoomNum = 1;
+}
+
+message C2G_EnterRoomRequest // IRequest
+{
+	int32 RpcId = 90;
+	int64 RoomNum = 1;
+}
+
+message G2C_EnterRoomResponse // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+
+	int64 RoomMaster = 1;
+	int32 SeatIndex = 2;
+}
+
+message C2G_ExitRoomRequest // IRequest
+{
+	int32 RpcId = 90;
+
+	bool IsDestroyRoom = 1;
+}
+
+message G2C_ExitRoomResponse // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}
+
+message C2M_RoomOpRequest // IActorLocationRequest
+{
+    int32 RpcId = 90;
+	int64 ActorId = 93;
+	int32 Op = 1;
+
+	repeated CardProto Cards = 2;
+}
+
+message M2C_RoomOpResponse // IActorLocationResponse
+{
+	int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+}
+
+message C2M_PlayCardRequest // IActorLocationRequest
+{
+	int32 RpcId = 90;
+	int64 ActorId = 93;
+
+	repeated CardProto Cards = 1;
+}
+
+message M2C_PlayCardResponse // IActorLocationResponse
+{
+	int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+}
+
+message RoomOpMessage // IActorMessage
+{
+	int64 ActorId = 94;
+
+	int32 Op = 1;
+	int32 SeatIndex = 2;
+	int64 UId = 3;
+}
+
+message PlayerEnterRoom // IActorMessage
+{
+	int64 ActorId = 94;
+	PlayerInfo Info = 1;
+	int32 SeatIndex = 2;
+	bool Ready = 3;
+}
+
+message PlayerExitRoom // IActorMessage
+{
+	int64 ActorId = 94;
+	int64 UId = 1;
+	int32 SeatIndex = 2;
+}
+
+message CardProto
+{
+	int32 Color = 1;
+	int32 Weight = 2;
+}
+
+message GameStartMessage // IActorMessage
+{
+	int64 ActorId = 94;
+}
+
+message HandCardMessage // IActorMessage
+{
+	int64 ActorId = 94;
+
+	repeated CardProto Cards = 1;
+	int32 Seat = 2;
+}
+
+message TeamMessage // IActorMessage
+{
+	int64 ActorId = 94;
+
+	int32 Team = 1;
+	int32 SeatIndex = 2;
+}
+
+message TurnMessage // IActorMessage
+{
+	int64 ActorId = 94;
+
+	// 最后操作的人
+	int32 LastOpSeat = 1; 
+	int32 LastOp = 2;
+	
+	int32 DeskSeat = 3;
+	repeated CardProto DeskCards = 4;
+	int32 DeskCardType = 5;
+	int32 CurrentSeat = 6;
+}
+
+// 回合结束
+message RoundEndMessage // IActorMessage
+{
+	int64 ActorId = 94;
+}
+
+message ScoreMessage // IActorMessage
+{
+	int64 ActorId = 94;
+	int32  Score = 1;
+	int32 Seat = 2;
+}

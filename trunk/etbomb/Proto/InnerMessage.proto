@@ -1,0 +1,135 @@
+syntax = "proto3";
+package ET;
+
+message R2G_GetLoginKey // IActorRequest
+{
+    int32 RpcId = 90;
+    int64 ActorId = 93;
+    int64 UId = 1;
+}
+
+message G2R_GetLoginKey // IActorResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+
+    int64 Key = 1;
+    int64 GateId = 2;
+}
+
+message M2G_SessionConnect // IActorResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+
+    int64 PlayerActorId = 1;
+}
+
+message G2M_SessionDisconnect // IActorLocationMessage
+{
+    int32 RpcId = 90;
+    int64 ActorId = 94;
+}
+
+message M2L_GetRoomNumRequest // IActorRequest
+{
+    int32 RpcId = 90;
+    int64 ActorId = 93;
+}
+
+message L2M_GetRoomNumResponse // IActorResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+
+    int64 RoomNum = 1;
+}
+
+message M2L_RoomAddMessage // IActorMessage
+{
+    int32 RpcId = 90;
+    int64 ActorId = 93;
+
+    int64 RoomNum = 1;
+    int64 RoomId = 2;
+}
+
+message M2L_RoomRemoveMessage // IActorMessage
+{
+    int32 RpcId = 90;
+    int64 ActorId = 93;
+
+    int64 RoomNum = 1;
+}
+
+message A2L_RoomGetRequest // IActorRequest
+{
+    int32 RpcId = 90;
+    int64 ActorId = 93;
+
+    int64 RoomNum = 1;
+}
+
+message L2A_RoomGetResponse // IActorResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+
+    int64 RoomId = 2;
+}
+
+message G2M_CreateRoomRequest // IActorRequest
+{
+    int32 RpcId = 90;
+    int64 ActorId = 93;
+
+    int64 UId = 1;
+}
+
+message M2G_CreateRoomResponse // IActorResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+
+    int64 RoomNum = 2;
+}
+
+message G2M_EnterRoomRequest // IActorLocationRequest
+{
+    int32 RpcId = 90;
+    int64 ActorId = 93;
+    
+    int64 UId = 1;
+    int64 GateSessionId = 2;
+}
+
+message M2G_EnterRoomResponse // IActorLocationResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+
+    int64 PlayerActorId = 1;
+    int32 SeatIndex = 2;
+    int64 RoomMaster = 4;
+}
+
+message G2M_ExitRoomRequest // IActorLocationRequest
+{
+    int32 RpcId = 90;
+    int64 ActorId = 93;
+    
+    bool IsDestroyRoom = 1;
+}
+
+message M2G_ExitRoomResponse // IActorLocationResponse
+{
+	int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+}

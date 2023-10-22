@@ -1,0 +1,119 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <OutputPath>..\..\Bin\</OutputPath>
+      <DefineConstants>TRACE;SERVER;NOT_CLIENT;</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <OutputPath>..\..\Bin\</OutputPath>
+      <DefineConstants>TRACE;SERVER;NOT_CLIENT;</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Model\Server.Model.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\GameErrorCode.cs">
+        <Link>GameErrorCode.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\Base\AnalysisContext.cs">
+        <Link>Map\CardPrompt\Base\AnalysisContext.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\Base\CardPromptAnalysis.cs">
+        <Link>Map\CardPrompt\Base\CardPromptAnalysis.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\Base\IAnalyzer.cs">
+        <Link>Map\CardPrompt\Base\IAnalyzer.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\Base\PrompCards.cs">
+        <Link>Map\CardPrompt\Base\PrompCards.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\BomAnalyzer.cs">
+        <Link>Map\CardPrompt\BomAnalyzer.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\DoubleAnalyzer.cs">
+        <Link>Map\CardPrompt\DoubleAnalyzer.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\DoubleStraightAnalyzer.cs">
+        <Link>Map\CardPrompt\DoubleStraightAnalyzer.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\OnlyThreeAnalyzer.cs">
+        <Link>Map\CardPrompt\OnlyThreeAnalyzer.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\SingleAnalyzer.cs">
+        <Link>Map\CardPrompt\SingleAnalyzer.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\StraightAnalyzer.cs">
+        <Link>Map\CardPrompt\StraightAnalyzer.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\ThreeAndTwoAnalyzer.cs">
+        <Link>Map\CardPrompt\ThreeAndTwoAnalyzer.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\CardPrompt\TripleStraightAnalyzer.cs">
+        <Link>Map\CardPrompt\TripleStraightAnalyzer.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Card\AnalyseResult.cs">
+        <Link>Map\Card\AnalyseResult.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Card\AnalyseResultHelper.cs">
+        <Link>Map\Card\AnalyseResultHelper.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Card\Card.cs">
+        <Link>Map\Card\Card.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Card\CardsHelper.cs">
+        <Link>Map\Card\CardsHelper.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Card\CardTypes.cs">
+        <Link>Map\Card\CardTypes.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Player\HandCardsComponent.cs">
+        <Link>Map\Player\HandCardsComponent.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Player\Player.cs">
+        <Link>Map\Player\Player.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Player\ScoreComponent.cs">
+        <Link>Map\Player\ScoreComponent.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\PopCardHelper.cs">
+        <Link>Map\PopCardHelper.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Room\GameController.cs">
+        <Link>Map\Room\GameController.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Room\GameInfo.cs">
+        <Link>Map\Room\GameInfo.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Room\Room.cs">
+        <Link>Map\Room\Room.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Bomb.Model\Game\Player\TeamComponent.cs">
+        <Link>Map\Player\TeamComponent.cs</Link>
+      </Compile>
+      <Compile Update="Common\Message\InnerMessage.cs">
+        <Link>Common\Message\InnerMessage.cs</Link>
+      </Compile>
+      <Compile Update="Common\Message\InnerOpcode.cs">
+        <Link>Common\Message\InnerOpcode.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Model\Module\Message\OuterMessage.cs">
+        <Link>Common\Message\OuterMessage.cs</Link>
+      </Compile>
+      <Compile Include="..\..\Unity\Assets\Model\Module\Message\OuterOpcode.cs">
+        <Link>Common\Message\OuterOpcode.cs</Link>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Realm" />
+    </ItemGroup>
+
+</Project>
