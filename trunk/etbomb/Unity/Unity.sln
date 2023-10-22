@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.ThirdParty", "Unity.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bomb.Model", "Bomb.Model.csproj", "{7af9671c-0055-d978-866f-3bf360470e91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkaUI", "AkaUI.csproj", "{61ae8258-9eeb-1101-147f-63ec19294c84}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkaUI.Editor", "AkaUI.Editor.csproj", "{67eafd70-771f-e236-b16d-cd0184cdb15a}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bomb.Model.Tests", "Bomb.Model.Tests.csproj", "{55170e16-75ed-b683-cbf2-d79dc112c741}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Editor", "Unity.Editor.csproj", "{041131cd-3018-19b1-81b6-5dbee2467ffb}"
@@ -33,14 +29,6 @@ Global
 		{7af9671c-0055-d978-866f-3bf360470e91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7af9671c-0055-d978-866f-3bf360470e91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7af9671c-0055-d978-866f-3bf360470e91}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61ae8258-9eeb-1101-147f-63ec19294c84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61ae8258-9eeb-1101-147f-63ec19294c84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61ae8258-9eeb-1101-147f-63ec19294c84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61ae8258-9eeb-1101-147f-63ec19294c84}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67eafd70-771f-e236-b16d-cd0184cdb15a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67eafd70-771f-e236-b16d-cd0184cdb15a}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67eafd70-771f-e236-b16d-cd0184cdb15a}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67eafd70-771f-e236-b16d-cd0184cdb15a}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55170e16-75ed-b683-cbf2-d79dc112c741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{55170e16-75ed-b683-cbf2-d79dc112c741}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55170e16-75ed-b683-cbf2-d79dc112c741}.Release|Any CPU.ActiveCfg = Release|Any CPU
