@@ -17,7 +17,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Game.Model\Game.Model.csproj" />
-      <ProjectReference Include="..\Hotfix\Server.Hotfix.csproj" />
+      <!-- <ProjectReference Include="..\Hotfix\Server.Hotfix.csproj" /> -->
     </ItemGroup>
 
     <ItemGroup>
